@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28917.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskShedulerMVC.BLL", "TaskShedulerMVC.BLL\TaskShedulerMVC.BLL.csproj", "{CAECEBED-FA8E-417C-81A9-D10DD5D34FC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskShedulerMVC.DAL", "TaskShedulerMVC.DAL\TaskShedulerMVC.DAL.csproj", "{A143E3F8-E5A9-488A-8963-7479FD52E6BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskShedulerMVC.UI", "TaskShedulerMVC.UI\TaskShedulerMVC.UI.csproj", "{1BF1FF71-4DF9-4B8E-92B2-2675E9D5B8FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CAECEBED-FA8E-417C-81A9-D10DD5D34FC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAECEBED-FA8E-417C-81A9-D10DD5D34FC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAECEBED-FA8E-417C-81A9-D10DD5D34FC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAECEBED-FA8E-417C-81A9-D10DD5D34FC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A143E3F8-E5A9-488A-8963-7479FD52E6BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A143E3F8-E5A9-488A-8963-7479FD52E6BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A143E3F8-E5A9-488A-8963-7479FD52E6BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A143E3F8-E5A9-488A-8963-7479FD52E6BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BF1FF71-4DF9-4B8E-92B2-2675E9D5B8FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BF1FF71-4DF9-4B8E-92B2-2675E9D5B8FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BF1FF71-4DF9-4B8E-92B2-2675E9D5B8FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BF1FF71-4DF9-4B8E-92B2-2675E9D5B8FD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2940D20E-64E5-4A9B-8DBD-E1DCA298FEB7}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,165 @@
+﻿@model PagedList.IPagedList<TaskShedulerMVC.BLL.ModelsDTO.TaskShedulDTO>
+@using PagedList.Mvc
+
+@*<div class="row">
+        <div class="col-xl-3 col-md-6 col-12">
+            <div style="background:red; height:50px;"></div>
+        </div>
+        <div class="col-xl-3 col-md-6 col-12">
+            <div style="background:red; height:50px;"></div>
+        </div>
+        <div class="col-xl-3 col-md-6 col-12">
+            <div style="background:red; height:50px;"></div>
+        </div>
+        <div class="col-xl-3 col-md-6 col-12">
+            <div style="background:red; height:50px;"></div>
+        </div>
+    </div>*@
+
+    @*<div>
+        @Ajax.ActionLink("ClickHere",
+                             "SomeAction", /*Controller Method Name*/
+                             null,
+                             new AjaxOptions
+                                 {
+                                     UpdateTargetId = "result",
+                                 //Confirm = "Are you sure?",
+                                 InsertionMode = InsertionMode.InsertAfter,
+                                 OnBegin = "ajaxFunc",
+                                 LoadingElementId = "loader",
+                                 LoadingElementDuration = 500
+                             },
+                             new
+                             {
+                                 @class = "btn btn-info w-100"
+                             })
+
+        <div id="result">
+
+        </div>
+
+        <div id="loader" class="loader"></div>
+
+        <script>
+            //$("#result").load("SomeAction")
+
+            function ajaxFunc() {
+                console.log("ajax");
+            }
+        </script>
+    </div>*@
+
+
+    <div class="sidebar">
+        @using (Ajax.BeginForm("GetTask", new AjaxOptions { UpdateTargetId = "filteredTasks" }))
+        {
+            <div class="form-group">
+                <label class="col-form-label">Name: </label>
+                <input name="_taskDecscr" class="form-control" type="text" />
+            </div>
+            <input type="submit" class="btn-info w-100" value="Filter" />
+        }
+        @*@foreach(var c in ViewBag.)*@
+    </div>
+
+<div id="tasks" class="container">
+    <div id="filteredTasks">
+        @{ 
+            Html.RenderPartial("TaskView", Model.ToList());
+        }
+    </div>
+</div>
+
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(PagedListRenderOptions.Classic, new AjaxOptions { UpdateTargetId = "filteredTasks"}))
+
+@*<div>
+    @foreach (var t in Model)
+    {
+        <div>
+            <p>@t.Deskription</p>
+            <p>@t.Deadline</p>
+            <p>@t.Categories.ElementAt(0).Name</p>
+
+        </div>
+    }
+
+
+</div>*@
+
+@*<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <div class="container">
+
+        <br>  <p class="text-center">More bootstrap 4 components on <a href="http://bootstrap-ecommerce.com/"> Bootstrap-ecommerce.com</a></p>
+        <hr>
+
+
+
+
+        <div class="row">
+            <div class="col-md-4">
+                <figure class="card card-product">
+                    <div class="img-wrap"><img src="https://s9.postimg.org/tupxkvfj3/image.jpg"></div>
+                    <figcaption class="info-wrap">
+                        <h4 class="title">Another name of item</h4>
+                        <p class="desc">Some small description goes here</p>
+                        <div class="rating-wrap">
+                            <div class="label-rating">132 reviews</div>
+                            <div class="label-rating">154 orders </div>
+                        </div> <!-- rating-wrap.// -->
+                    </figcaption>
+                    <div class="bottom-wrap">
+                        <a href="" class="btn btn-sm btn-primary float-right">Order Now</a>
+                        <div class="price-wrap h5">
+                            <span class="price-new">$1280</span> <del class="price-old">$1980</del>
+                        </div> <!-- price-wrap.// -->
+                    </div> <!-- bottom-wrap.// -->
+                </figure>
+            </div> <!-- col // -->
+            <div class="col-md-4">
+                <figure class="card card-product">
+                    <div class="img-wrap"><img src="https://s9.postimg.org/ojb106167/image.jpg"> </div>
+                    <figcaption class="info-wrap">
+                        <h4 class="title">Good product</h4>
+                        <p class="desc">Some small description goes here</p>
+                        <div class="rating-wrap">
+                            <div class="label-rating">132 reviews</div>
+                            <div class="label-rating">154 orders </div>
+                        </div> <!-- rating-wrap.// -->
+                    </figcaption>
+                    <div class="bottom-wrap">
+                        <a href="" class="btn btn-sm btn-primary float-right">Order Now</a>
+                        <div class="price-wrap h5">
+                            <span class="price-new">$1280</span> <del class="price-old">$1980</del>
+                        </div> <!-- price-wrap.// -->
+                    </div> <!-- bottom-wrap.// -->
+                </figure>
+            </div> <!-- col // -->
+            <div class="col-md-4">
+                <figure class="card card-product">
+                    <div class="img-wrap"><img src="https://s9.postimg.org/4ooze1tof/image.jpg"></div>
+                    <figcaption class="info-wrap">
+                        <h4 class="title">Product name goes here</h4>
+                        <p class="desc">Some small description goes here</p>
+                        <div class="rating-wrap">
+                            <div class="label-rating">132 reviews</div>
+                            <div class="label-rating">154 orders </div>
+                        </div> <!-- rating-wrap.// -->
+                    </figcaption>
+                    <div class="bottom-wrap">
+                        <a href="" class="btn btn-sm btn-primary float-right">Order Now</a>
+                        <div class="price-wrap h5">
+                            <span class="price-new">$1280</span> <del class="price-old">$1980</del>
+                        </div> <!-- price-wrap.// -->
+                    </div> <!-- bottom-wrap.// -->
+                </figure>
+            </div> <!-- col // -->
+        </div> <!-- row.// -->
+
+
+
+    </div>
+    <!--container.//-->*@
