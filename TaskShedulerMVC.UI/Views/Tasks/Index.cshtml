@@ -1,21 +1,6 @@
 ﻿@model PagedList.IPagedList<TaskShedulerMVC.BLL.ModelsDTO.TaskShedulDTO>
 @using PagedList.Mvc
 
-@*<div class="row">
-        <div class="col-xl-3 col-md-6 col-12">
-            <div style="background:red; height:50px;"></div>
-        </div>
-        <div class="col-xl-3 col-md-6 col-12">
-            <div style="background:red; height:50px;"></div>
-        </div>
-        <div class="col-xl-3 col-md-6 col-12">
-            <div style="background:red; height:50px;"></div>
-        </div>
-        <div class="col-xl-3 col-md-6 col-12">
-            <div style="background:red; height:50px;"></div>
-        </div>
-    </div>*@
-
     @*<div>
         @Ajax.ActionLink("ClickHere",
                              "SomeAction", /*Controller Method Name*/
@@ -70,21 +55,9 @@
     </div>
 </div>
 
-@Html.PagedListPager(Model, page => Url.Action("Index", new { page }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(PagedListRenderOptions.Classic, new AjaxOptions { UpdateTargetId = "filteredTasks"}))
-
-@*<div>
-    @foreach (var t in Model)
-    {
-        <div>
-            <p>@t.Deskription</p>
-            <p>@t.Deadline</p>
-            <p>@t.Categories.ElementAt(0).Name</p>
-
-        </div>
-    }
+@*@Html.PagedListPager(Model, page => Url.Action("Index", new { page }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(PagedListRenderOptions.Classic, new AjaxOptions { UpdateTargetId = "filteredTasks"}))*@
 
 
-</div>*@
 
 @*<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
