@@ -44,8 +44,22 @@
             </div>
             <input type="submit" class="btn-info w-100" value="Filter" />
         }
-        @*@foreach(var c in ViewBag.)*@
+        @foreach (var c in ViewBag.Category)
+        {
+            <span class="form-control">
+                <input id="@c" type="checkbox" onchange="checkCategory(event)"/>
+                @c
+            </span>
+        }
     </div>
+<script>
+    function checkCategory(e) {
+        //alert("script")
+        if (e.target.checked) {
+            $("#filteredTasks").load("Tasks/GetTaskByCategory?_categoryName=" + e.target.id);
+        }
+    }
+</script>
 
 <div id="tasks" class="container">
     <div id="filteredTasks">
